@@ -8,7 +8,11 @@
                 <div class="card-header">Lista de Usuários</div>
 
                 <div class="card-body">
-                    <table class="table table-striped table-bordered table-hover">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                        
+                    <table style="width:100%" class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th class="th">ID</th>
@@ -29,7 +33,8 @@
                             </tr>  
                             @endforeach
                         </tbody>
-                    </table>
+                    </table></div>
+                </div>
                     <div class="row mb-0">
                         <div class="col-md-12 text-center">
                             <a href="{!! route('usuario.showStoreForm') !!}" class="btn btn-primary">

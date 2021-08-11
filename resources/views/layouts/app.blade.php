@@ -23,6 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -68,10 +69,43 @@
                 </div>
             </div>
         </nav>
+        {{-- FeedBack --}}
+        @if(session('success'))
+        <div class="container remove-after-5">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="alert alert-success" role="alert">
+                        {{session('success')}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+        @if(session('warning'))
+        <div class="container remove-after-5">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="alert alert-warning" role="alert">
+                        {{session('warning')}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+        @if(session('error'))
+        <div class="container remove-after-5">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="alert alert-danger" role="alert">
+                        {{session('error')}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+        @yield('content')
+
         <script src="{{ asset('js/custom.js') }}" defer></script>
     </div>
 </body>

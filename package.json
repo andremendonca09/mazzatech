@@ -12,7 +12,13 @@
     "devDependencies": {
         "axios": "^0.21",
         "bootstrap": "^4.6.0",
+        "datatables.net": "^1.10.25",
+        "datatables.net-bs4": "^3.2.2",
+        "datatables.net-bs5": "^1.10.25",
+        "datatables.net-dt": "^1.1.0",
         "jquery": "^3.6.0",
+        "jquery-mask-plugin": "^1.14.16",
+        "jquery-ui": "^1.12.1",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "popper.js": "^1.16.1",
@@ -23,7 +29,6 @@
     },
     "dependencies": {
         "datatables.net-buttons-dt": "^1.7.1",
-        "datatables.net-dt": "^1.1.0",
         "datatables.net-responsive-dt": "^2.2.9"
     }
 }

@@ -8,7 +8,7 @@
                 <div class="card-header">Lista de Pacientes</div>
 
                 <div class="card-body">
-                    <table class="table table-striped table-bordered table-hover">
+                    <table style="width:100%" class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th class="th">ID</th>
@@ -19,7 +19,7 @@
                                 <th class="th">Ação</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        {{-- <tbody>
                             @forelse ($pacientes as $paciente)
                             <tr>
                                 <td>{{$paciente->id}}</td>
@@ -37,7 +37,7 @@
                                 <td colspan="6">Nenhum registro encontrado!</td>
                             </tr>
                             @endforelse 
-                        </tbody>
+                        </tbody> --}}
                     </table>
                     <div class="row mb-0">
                         <div class="col-md-12 text-center">
