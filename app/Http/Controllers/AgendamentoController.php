@@ -13,9 +13,6 @@ class AgendamentoController extends Controller
     {
         $agendamentos = Agendamento::all();
         return view('agendamento.index', compact('agendamentos'));
-        // $medicos = Medico::select('id','nome')->get();
-        // $pacientes = Paciente::select('id','nome')->get();
-        // return view('agendamento.index', compact('agendamentos', 'medicos', 'pacientes'));
     }
 
     public function showStoreForm(Paciente $paciente)

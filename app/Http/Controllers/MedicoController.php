@@ -8,12 +8,20 @@ use Illuminate\Http\Request;
 
 class MedicoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $medicos = Medico::select('id', 'nome', 'crm', 'situacao_medico_id')->get();
         $medicos->load('situacao_medico');
 
         return view('medico.index', compact('medicos'));
+    }
+
+    public function listaMedicos()
+    {
+        $medicos = Medico::select('id', 'nome', 'crm', 'situacao_medico_id')->get();
+        $medicos->load('situacao_medico');
+
+        return $medicos->toJson();
     }
 
     public function showStoreForm()
