@@ -104,7 +104,9 @@
         </div>
         @endif
 
-        @yield('content')
+        <div class="py-4">
+            @yield('content')
+        </div>
 
         <script src="{{ asset('js/custom.js') }}" defer></script>
     </div>

@@ -26,7 +26,7 @@ class PacienteController extends Controller
         $this->validate($request,[
             'nome' => 'required|min:2|max:255',
             'cpf' => 'required|min:5|max:20|unique:paciente,cpf',
-            'telefone.*' => 'nullable|min:11|max:20',
+            'telefone.*' => 'nullable|min:13|max:14',
             'email' => 'nullable|email',
         ]);
 
@@ -62,7 +62,7 @@ class PacienteController extends Controller
         $this->validate($request,[
             'nome' => 'required|min:2|max:255',
             'cpf' => "required|min:5|max:20|unique:paciente,cpf,$paciente->id",
-            'telefone.*' => 'nullable|min:11|max:20',
+            'telefone.*' => 'nullable|min:13|max:14',
             'email' => 'nullable|email',
         ]);
 

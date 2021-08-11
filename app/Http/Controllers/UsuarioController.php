@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UsuarioRequest;
 use App\Models\SituacaoUsuario;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
@@ -23,15 +24,8 @@ class UsuarioController extends Controller
         return view('usuario.store', compact('situacoes'));
     }
 
-    public function store(Request $request)
+    public function store(UsuarioRequest $request)
     {
-        $this->validate($request,[
-            'nome' => 'required|min:2|max:255',
-            'login' => 'required|min:2|max:50|unique:usuario,login',
-            'senha' => 'required|min:8|confirmed',
-            'situacao_usuario_id'=> 'required|exists:situacao_usuario,id',
-        ]);
-
         Usuario::create([
             'nome' => $request->nome,
             'login' => $request->login,
@@ -49,16 +43,10 @@ class UsuarioController extends Controller
         return view('usuario.update', compact('situacoes','usuario'));
     }
 
-    public function update(Usuario $usuario,Request $request)
+    public function update(Usuario $usuario,UsuarioRequest $request)
     {
-        $this->validate($request,[
-            'nome' => 'required|min:2|max:255',
-            'login' => "required|min:2|max:50|unique:usuario,login,$usuario->id",
-            'senha' => 'nullable|min:8|confirmed',
-            'situacao_usuario_id'=> 'required|exists:situacao_usuario,id',
-        ]);
-
         $dados = $request->only('nome', 'login', 'situacao_usuario_id');
+        
         if(!empty($request->senha))
             $dados['senha']=Hash::make($request->senha);
 

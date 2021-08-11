@@ -29,7 +29,7 @@
                             <label for="cpf" class="col-md-4 col-form-label text-md-right">CPF</label>
 
                             <div class="col-md-6">
-                                <input id="cpf" type="text" class="form-control @error('cpf') is-invalid @enderror" name="cpf" value="{{ old('cpf') }}" required autocomplete="cpf">
+                                <input id="cpf" type="text" class="form-control cpf-mask @error('cpf') is-invalid @enderror" name="cpf" value="{{ old('cpf') }}" required autocomplete="cpf">
 
                                 @error('cpf')
                                     <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                             <label for="telefone" class="col-md-4 col-form-label text-md-right">Telefone</label>
 
                             <div class="col-md-6">
-                                <input id="telefone" type="text" class="form-control @error('telefone.0') is-invalid @enderror" name="telefone[]" value="{{ old('telefone.0') }}">
+                                <input id="telefone" type="text" class="form-control telefone-mask @error('telefone.0') is-invalid @enderror" name="telefone[]" value="{{ old('telefone.0') }}">
 
                                 @error('telefone.0')
                                     <span class="invalid-feedback" role="alert">
@@ -57,7 +57,7 @@
                             <label for="telefone" class="col-md-4 col-form-label text-md-right">Telefone</label>
 
                             <div class="col-md-6">
-                                <input id="telefone" type="text" class="form-control @error('telefone.1') is-invalid @enderror" name="telefone[]" value="{{ old('telefone.1') }}">
+                                <input id="telefone" type="text" class="form-control telefone-mask @error('telefone.1') is-invalid @enderror" name="telefone[]" value="{{ old('telefone.1') }}">
 
                                 @error('telefone.1')
                                     <span class="invalid-feedback" role="alert">

@@ -29,7 +29,7 @@
                             <label for="crm" class="col-md-4 col-form-label text-md-right">CRM</label>
 
                             <div class="col-md-6">
-                                <input id="crm" type="number" class="form-control @error('crm') is-invalid @enderror" name="crm" value="{{ old('crm') }}" required autocomplete="crm">
+                                <input id="crm" type="number" class="form-control crm-mask @error('crm') is-invalid @enderror" name="crm" value="{{ old('crm') }}" required autocomplete="crm">
 
                                 @error('crm')
                                     <span class="invalid-feedback" role="alert">
